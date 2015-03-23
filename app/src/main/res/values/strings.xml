@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Situaçao Metro SP</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="updated_at">Updated at </string>
+
+    <string name="place_holder">place holder</string>
+</resources>

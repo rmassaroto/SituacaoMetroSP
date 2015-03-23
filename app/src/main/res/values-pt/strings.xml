@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Situação Metro SP</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="updated_at">Atualizado em </string>
+
+    <string name="place_holder">place holder</string>
+</resources>

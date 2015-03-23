@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:background="@drawable/background_circle"
+        android:id="@+id/text_1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="1"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+    
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:text="Linha 1 - Azul"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/text_1"
+        android:layout_toEndOf="@+id/text_1"
+        android:gravity="center_vertical"/>
+    
+    <View
+        android:background="@drawable/background_circle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/view"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+    
+</RelativeLayout>
