@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
 
     private TextView refreshTimeTextView;
 
-    private FloatingActionButton refreshButton;
+    private ImageButton refreshButton;
 
     private ListView linesStatusListView;
     private LinesStatusAdapter linesStatusAdapter;
@@ -58,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         refreshTimeTextView = (TextView) findViewById(R.id.activity_main_refresh_time);
-        refreshButton = (FloatingActionButton) findViewById(R.id.refresh_button);
+        refreshButton = (ImageButton) findViewById(R.id.floating_action_button);
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
