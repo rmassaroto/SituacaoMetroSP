@@ -6,4 +6,4 @@
     android:text="@string/place_holder"
     android:textSize="14sp"
     android:gravity="left|center_vertical"
-    android:textColor="@color/primary_color"/>
+    android:textColor="@color/colorPrimary"/>

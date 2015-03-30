@@ -2,8 +2,17 @@
 <resources>
     <string name="app_name">Situação Metro SP</string>
 
+    <!-- Main Activity -->
     <string name="action_settings">Configurações</string>
     <string name="updated_at">Atualizado em </string>
+    <string name="still_not_updated">Ainda não atualizado</string>
 
-    <string name="place_holder">place holder</string>
+    <!-- Errors -->
+    <string name="could_not_get_data_error">Não foi possível obter as informações, por gentileza tente novamente depois!</string>
+
+    <!-- Common -->
+    <string name="place_holder">Place holder</string>
+    <string name="cancel">Cancelar</string>
+    <string name="error_title">Error</string>
+    <string name="no_internet_connection_error_message">There is no internet connection, you must be connected to continue.</string>
 </resources>

@@ -25,10 +25,13 @@ public class JSONParser {
 
         response = "{ \"lines\" : [\n" + response.substring(0, startIndex) + ", \n" + response.substring(lastIndex + 16, response.length() - 10) + "}";
 
-        response = response.replace("&#227;", "ã");
         response = response.replace("&#224;", "à");
-        response = response.replace("&#245;", "õ");
+        response = response.replace("&#225;", "á");
+        response = response.replace("&#227;", "ã");
         response = response.replace("&#231;", "ç");
+        response = response.replace("#234;", "ê");
+        response = response.replace("&#245;", "õ");
+
 
         try {
             JSONObject result = new JSONObject(response);
