@@ -21,23 +21,28 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 /**
  * Created by renancardosomassaroto on 3/11/15.
  */
 public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
     private Context context;
-    private String colorList[] = {"#3f51b5", "#009688", "#f44336", "#ffeb3b", "#ab47bc"};
-    private String linesList[] = {"Linha 1 - Azul", "Linha 2 - Verde", "Linha 3 - Vermelha", "Linha 4 - Amarela", "Linha 5 - Lilás"};
-    private String linesStatus[] = {"#9E9E9E", "#9E9E9E", "#9E9E9E", "#9E9E9E", "#9E9E9E"};
-    private String linesStatusMsg[] = {"", "", "", "", ""};
-    private String linesStatusDesc[] = {"", "", "", "", ""};
+
+    private ArrayList<String> linesColor = new ArrayList<>();
+    private ArrayList<String> linesNumber = new ArrayList<>();
+    private ArrayList<String> linesName = new ArrayList<>();
+    private ArrayList<String> linesStatus = new ArrayList<>();
+    private ArrayList<String> linesStatusMsg = new ArrayList<>();
+    private ArrayList<String> linesStatusDesc = new ArrayList<>();
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
-        mBuilder.setTitle(linesList[position]);
-        mBuilder.setMessage(linesStatusMsg[position] + "\n" + linesStatusDesc[position]);
+        mBuilder.setTitle(linesName.get(position));
+        mBuilder.setMessage(linesStatusMsg.get(position) + "\n" + linesStatusDesc.get(position));
+//        mBuilder.setMessage(linesStatusMsg.get(position));
 
         AlertDialog mAlertDialog = mBuilder.create();
         mAlertDialog.show();
@@ -49,12 +54,12 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
 
     @Override
     public int getCount() {
-        return linesList.length;
+        return linesName.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return linesList[position];
+        return linesName.get(position);
     }
 
     @Override
@@ -70,37 +75,46 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
         }
 
         TextView lineColor = (TextView) convertView.findViewById(R.id.text_1);
-        lineColor.setText(Integer.toString(position + 1));
-        lineColor.getBackground().setColorFilter(Color.parseColor(colorList[position]), PorterDuff.Mode.MULTIPLY);
+        lineColor.setText(linesNumber.get(position));
+        lineColor.getBackground().setColorFilter(Color.parseColor(linesColor.get(position)), PorterDuff.Mode.MULTIPLY);
 
         TextView lineName = (TextView) convertView.findViewById(R.id.text_2);
-        lineName.setText(linesList[position]);
+        lineName.setText(linesName.get(position));
 
         View lineStatus = convertView.findViewById(R.id.view);
-        lineStatus.getBackground().setColorFilter(Color.parseColor(linesStatus[position]), PorterDuff.Mode.MULTIPLY);
+        lineStatus.getBackground().setColorFilter(Color.parseColor(linesStatus.get(position)), PorterDuff.Mode.MULTIPLY);
 
         return convertView;
     }
 
-    public void setLinesStatusData(JSONObject jsonObject) {
+    public void setMetroLinesStatusData(JSONObject jsonObject) {
+        linesColor = new ArrayList<>();
+        linesNumber = new ArrayList<>();
+        linesName = new ArrayList<>();
+        linesStatus = new ArrayList<>();
+        linesStatusMsg = new ArrayList<>();
+        linesStatusDesc = new ArrayList<>();
+
         try {
             JSONArray lines = jsonObject.getJSONArray("lines");
             for (int i = 0; i < lines.length(); i++) {
                 JSONObject line = lines.getJSONObject(i);
+
+                linesNumber.add(line.getString("lineNumber"));
+                linesName.add(line.getString("lineName"));
+                linesColor.add(line.getString("lineColor"));
+
                 String status = line.getString("status");
                 if (status.equalsIgnoreCase("lentidão")) {
-                    linesStatus[i] = "#ffeb3b";
-                    linesStatusMsg[i] = line.getString("msgStatus");
-                    linesStatusDesc[i] = line.getString("descricao");
+                    linesStatus.add("#ffeb3b");
                 } else if (status.equalsIgnoreCase("normal")) {
-                    linesStatus[i] = "#4caf50";
-                    linesStatusMsg[i] = line.getString("msgStatus");
-                    linesStatusDesc[i] = line.getString("descricao");
+                    linesStatus.add("#4caf50");
                 } else {
-                    linesStatus[i] = "#f44336";
-                    linesStatusMsg[i] = line.getString("msgStatus");
-                    linesStatusDesc[i] = line.getString("descricao");
+                    linesStatus.add("#f44336");
                 }
+
+                linesStatusMsg.add(line.getString("msgStatus"));
+                linesStatusDesc.add(line.getString("descricao"));
 
                 notifyDataSetChanged();
             }
@@ -109,9 +123,46 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
         }
     }
 
+    public void setCptmLinesStatusData(JSONObject jsonObject) {
+        if (jsonObject != null) {
+            try {
+                JSONArray lines = jsonObject.getJSONArray("lines");
+                for (int i = 0; i < lines.length(); i++) {
+                    JSONObject line = lines.getJSONObject(i);
+
+                    linesNumber.add(line.getString("lineNumber"));
+                    linesName.add(line.getString("lineName"));
+                    linesColor.add(line.getString("lineColor"));
+
+                    String status = line.getString("status");
+                    if (status.equalsIgnoreCase("lentidão") || status.equalsIgnoreCase("velocidade reduzida")) {
+                        linesStatusMsg.add(line.optString("msgStatus", "Velocidade Reduzida"));
+                        linesStatus.add("#ffeb3b");
+                    } else if (status.equalsIgnoreCase("normal")) {
+                        linesStatusMsg.add(line.optString("msgStatus", "Operação Normal"));
+                        linesStatus.add("#4caf50");
+                    } else {
+                        linesStatusMsg.add(line.optString("msgStatus", "N/D"));
+                        linesStatus.add("#f44336");
+                    }
+
+
+                    linesStatusDesc.add(line.optString("descricao", ""));
+
+                    notifyDataSetChanged();
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            //TODO: Handle error
+        }
+    }
+
     public String getStatusMsg(int position) {
-        if (position >= 0 && position < linesStatusMsg.length) {
-            return linesStatusMsg[position];
+        if (position >= 0 && position < linesStatusMsg.size()) {
+            return linesStatusMsg.get(position);
         } else {
             return null;
         }
