@@ -3,28 +3,14 @@
     <string name="app_name">Situação Metrô SP</string>
 
     <!-- Main Activity -->
-    <string name="action_settings">Settings</string>
-    <string name="updated_at">Updated at </string>
     <string name="still_not_updated">No yet updated</string>
 
     <!-- Errors -->
     <string name="could_not_get_data_error">Could not get data, please try again later!</string>
 
     <!-- Common -->
-    <string name="place_holder">Place holder</string>
-    <string name="cancel">Cancel</string>
     <string name="error_title">Error</string>
     <string name="no_internet_connection_error_message">There is no internet connection, you must be connected to continue.</string>
 
     <!-- Widget -->
-    <string name="line_1">Line 1 - Blue</string>
-    <string name="line_2">Line 2 - Green</string>
-    <string name="line_3">Line 3 - Red</string>
-    <string name="line_4">Line 4 - Yellow</string>
-    <string name="line_5">Line 5 - Purple</string>
-    <string name="line_1_place_holder">Line 1 - Blue - Normal</string>
-    <string name="line_2_place_holder">Line 2 - Green - Normal</string>
-    <string name="line_3_place_holder">Line 3 - Red - Normal</string>
-    <string name="line_4_place_holder">Line 4 - Yellow - Normal</string>
-    <string name="line_5_place_holder">Line 5 - Purple - Normal</string>
 </resources>

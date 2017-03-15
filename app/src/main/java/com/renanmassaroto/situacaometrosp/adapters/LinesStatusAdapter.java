@@ -141,6 +141,9 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
                     } else if (status.equalsIgnoreCase("normal")) {
                         linesStatusMsg.add(line.optString("msgStatus", "Operação Normal"));
                         linesStatus.add("#4caf50");
+                    } else if (status.equalsIgnoreCase("Operação Normal")) {
+                        linesStatusMsg.add(line.optString("msgStatus", "Operação Normal"));
+                        linesStatus.add("#4caf50");
                     } else {
                         linesStatusMsg.add(line.optString("msgStatus", "N/D"));
                         linesStatus.add("#f44336");

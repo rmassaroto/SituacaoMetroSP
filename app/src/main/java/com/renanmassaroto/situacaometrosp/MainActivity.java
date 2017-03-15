@@ -1,7 +1,6 @@
 package com.renanmassaroto.situacaometrosp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -13,10 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +21,6 @@ import com.android.volley.VolleyError;
 import com.renanmassaroto.situacaometrosp.adapters.LinesStatusAdapter;
 import com.renanmassaroto.situacaometrosp.api.MetroApi;
 import com.renanmassaroto.situacaometrosp.utils.JSONParser;
-import com.renanmassaroto.situacaometrosp.widgets.WidgetUpdater;
 
 import org.json.JSONObject;
 
