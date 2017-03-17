@@ -178,7 +178,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 rubi'><span class='nome_linha'>RUBI</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lines\": [ { \"lineNumber\" : " + LINE_NUMBER_RUBI + ", \"lineName\" : \"" + LINE_NAME_RUBI + "\", \"lineColor\" : \"" + LINE_COLOR_RUBI + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 rubi'><span class='nome_linha'>RUBI</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lines\": [\n { \"lineNumber\" : " + LINE_NUMBER_RUBI + ", \"lineName\" : \"" + LINE_NAME_RUBI + "\", \"lineColor\" : \"" + LINE_COLOR_RUBI + "\", \"descricao\" : \"");
@@ -188,7 +188,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 diamante'><span class='nome_linha'>DIAMANTE</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lineNumber\" : " + LINE_NUMBER_DIAMANTE + ", \"lineName\" : \"" + LINE_NAME_DIAMANTE + "\", \"lineColor\" : \"" + LINE_COLOR_DIAMANTE + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 diamante'><span class='nome_linha'>DIAMANTE</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lineNumber\" : " + LINE_NUMBER_DIAMANTE + ", \"lineName\" : \"" + LINE_NAME_DIAMANTE + "\", \"lineColor\" : \"" + LINE_COLOR_DIAMANTE + "\", \"descricao\" : \"");
@@ -198,7 +198,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 esmeralda'><span class='nome_linha'>ESMERALDA</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lineNumber\" : " + LINE_NUMBER_ESMERALDA + ", \"lineName\" : \"" + LINE_NAME_ESMERALDA + "\", \"lineColor\" : \"" + LINE_COLOR_ESMERALDA + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 esmeralda'><span class='nome_linha'>ESMERALDA</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lineNumber\" : " + LINE_NUMBER_ESMERALDA + ", \"lineName\" : \"" + LINE_NAME_ESMERALDA + "\", \"lineColor\" : \"" + LINE_COLOR_ESMERALDA + "\", \"descricao\" : \"");
@@ -208,7 +208,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 turquesa'><span class='nome_linha'>TURQUESA</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lineNumber\" : " + LINE_NUMBER_TURQUESA + ", \"lineName\" : \"" + LINE_NAME_TURQUESA + "\", \"lineColor\" : \"" + LINE_COLOR_TURQUESA + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 turquesa'><span class='nome_linha'>TURQUESA</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lineNumber\" : " + LINE_NUMBER_TURQUESA + ", \"lineName\" : \"" + LINE_NAME_TURQUESA + "\", \"lineColor\" : \"" + LINE_COLOR_TURQUESA + "\", \"descricao\" : \"");
@@ -218,7 +218,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 coral'><span class='nome_linha'>CORAL</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lineNumber\" : " + LINE_NUMBER_CORAL + ", \"lineName\" : \"" + LINE_NAME_CORAL + "\", \"lineColor\" : \"" + LINE_COLOR_CORAL + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 coral'><span class='nome_linha'>CORAL</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lineNumber\" : " + LINE_NUMBER_CORAL + ", \"lineName\" : \"" + LINE_NAME_CORAL + "\", \"lineColor\" : \"" + LINE_COLOR_CORAL + "\", \"descricao\" : \"");
@@ -228,7 +228,7 @@ public class JSONParser {
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 safira'><span class='nome_linha'>SAFIRA</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
                 "{ \"lineNumber\" : " + LINE_NUMBER_SAFIRA + ", \"lineName\" : \"" + LINE_NAME_SAFIRA + "\", \"lineColor\" : \"" + LINE_COLOR_SAFIRA + "\", \"descricao\" : \"Operação Normal\", \"status\": \"normal");
-        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
+//        response = response.replace("'   class='status_normal'>Operação Normal", "\",\n \"status\": \"normal");
         // Case reduced speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 safira'><span class='nome_linha'>SAFIRA</span><span data-placement='bottom' title=''  data-original-title='",
                 "{ \"lineNumber\" : " + LINE_NUMBER_SAFIRA + ", \"lineName\" : \"" + LINE_NAME_SAFIRA + "\", \"lineColor\" : \"" + LINE_COLOR_SAFIRA + "\", \"descricao\" : \"");

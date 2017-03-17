@@ -128,7 +128,6 @@ public class MainActivity extends ActionBarActivity implements MetroApi.ApiRespo
 
     @Override
     public void onErrorResponseReceived(Context context, VolleyError error) {
-        Log.e(LOG_TAG, error.getMessage());
         Toast.makeText(this, getString(R.string.could_not_get_data_error), Toast.LENGTH_SHORT).show();
         mProgressBar.setVisibility(View.INVISIBLE);
 
