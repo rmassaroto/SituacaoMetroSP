@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SituacaoMetroSP.iml" filepath="$PROJECT_DIR$/SituacaoMetroSP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file:///Volumes/Macintosh HD/Users/Appfactory/Documents/projects/SituacaoMetroSP/SituacaoMetroSP.iml" filepath="/Volumes/Macintosh HD/Users/Appfactory/Documents/projects/SituacaoMetroSP/SituacaoMetroSP.iml" />
+      <module fileurl="file:///Volumes/Macintosh HD/Users/Appfactory/Documents/projects/SituacaoMetroSP/app/app.iml" filepath="/Volumes/Macintosh HD/Users/Appfactory/Documents/projects/SituacaoMetroSP/app/app.iml" />
     </modules>
   </component>
 </project>

@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.crashlytics.android.Crashlytics;
 import com.renanmassaroto.situacaometrosp.adapters.LinesStatusAdapter;
 import com.renanmassaroto.situacaometrosp.api.MetroApi;
 import com.renanmassaroto.situacaometrosp.utils.JSONParser;
 
+import io.fabric.sdk.android.Fabric;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -55,6 +57,7 @@ public class MainActivity extends ActionBarActivity implements MetroApi.ApiRespo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
