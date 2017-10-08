@@ -109,6 +109,8 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
                     linesStatus.add("#ffeb3b");
                 } else if (status.equalsIgnoreCase("normal")) {
                     linesStatus.add("#4caf50");
+                } else if (status.equalsIgnoreCase("parcial")) {
+                    linesStatus.add("#ffeb3b");
                 } else {
                     linesStatus.add("#f44336");
                 }
@@ -144,6 +146,9 @@ public class LinesStatusAdapter extends BaseAdapter implements AdapterView.OnIte
                     } else if (status.equalsIgnoreCase("Operação Normal")) {
                         linesStatusMsg.add(line.optString("msgStatus", "Operação Normal"));
                         linesStatus.add("#4caf50");
+                    } else if (status.equalsIgnoreCase("Operação Parcial")) {
+                        linesStatusMsg.add(line.optString("msgStatus", "Operação Parcial"));
+                        linesStatus.add("#ffeb3b");
                     } else {
                         linesStatusMsg.add(line.optString("msgStatus", "N/D"));
                         linesStatus.add("#f44336");
