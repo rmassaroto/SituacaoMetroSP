@@ -4,8 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,15 +18,15 @@ import com.renanmassaroto.situacaometrosp.requests.CustomStringRequest;
  */
 public class MetroApi {
 
-    public static final String METRO_SERVICE_URL = "http://www.metro.sp.gov.br/Sistemas/direto-do-metro-via4/diretodoMetroHome.aspx?id=8c583116-4ff7-4205-a1c8-264050698929/";
-    public static final String CPTM_SERVICE_URL = "http://www.cptm.sp.gov.br/Pages/Home.aspx";
+    private static final String METRO_SERVICE_URL = "http://www.metro.sp.gov.br/Sistemas/direto-do-metro-via4/diretodoMetroHome.aspx?id=8c583116-4ff7-4205-a1c8-264050698929/";
+    private static final String CPTM_SERVICE_URL = "http://www.cptm.sp.gov.br/Pages/Home.aspx";
 
     public interface ApiResponseListener {
-        void onResponseReceived(Context context, String response);
-        void onErrorResponseReceived(Context context, VolleyError error);
+        void onResponseReceived(String response);
+        void onErrorResponseReceived(VolleyError error);
     }
 
-    public static void refreshMetroData(final Context context, final ApiResponseListener listener) {
+    public static void refreshMetroData(Context context, final ApiResponseListener listener) {
 
         if (isConnected(context)) {
             RequestQueue queue = Volley.newRequestQueue(context);
@@ -36,12 +34,12 @@ public class MetroApi {
             final CustomStringRequest customStringRequest = new CustomStringRequest(Request.Method.GET, METRO_SERVICE_URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    listener.onResponseReceived(context, response);
+                    listener.onResponseReceived(response);
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    listener.onErrorResponseReceived(context, error);
+                    listener.onErrorResponseReceived(error);
                 }
             });
 
@@ -57,7 +55,7 @@ public class MetroApi {
         }
     }
 
-    public static void refreshCptmData(final Context context, final ApiResponseListener listener) {
+    public static void refreshCptmData(Context context, final ApiResponseListener listener) {
 
         if (isConnected(context)) {
             RequestQueue queue = Volley.newRequestQueue(context);
@@ -65,12 +63,12 @@ public class MetroApi {
             final CustomStringRequest customStringRequest = new CustomStringRequest(Request.Method.GET, CPTM_SERVICE_URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    listener.onResponseReceived(context, response);
+                    listener.onResponseReceived(response);
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    listener.onErrorResponseReceived(context, error);
+                    listener.onErrorResponseReceived(error);
                 }
             });
 
@@ -86,7 +84,7 @@ public class MetroApi {
         }
     }
 
-    public static boolean isConnected(Context context) {
+    private static boolean isConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 

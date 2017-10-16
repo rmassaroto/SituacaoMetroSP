@@ -1,9 +1,5 @@
 package com.renanmassaroto.situacaometrosp.utils;
 
-import android.util.Log;
-
-import com.renanmassaroto.situacaometrosp.MainActivity;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,70 +10,70 @@ import org.json.JSONObject;
 public class JSONParser {
 
     // KEY NAMES
-    public static final String LINE_NUMBER = "lineNumber";
-    public static final String LINE_NAME = "lineName";
-    public static final String LINE_COLOR = "lineColor";
+    private static final String LINE_NUMBER = "lineNumber";
+    private static final String LINE_NAME = "lineName";
+    private static final String LINE_COLOR = "lineColor";
 
     // BLUE LINE
-    public static final String LINE_NUMBER_BLUE = "1";
-    public static final String LINE_NAME_BLUE = "Linha 1 - Azul";
-    public static final String LINE_COLOR_BLUE = "#3f51b5";
+    private static final String LINE_NUMBER_BLUE = "1";
+    private static final String LINE_NAME_BLUE = "Linha 1 - Azul";
+    private static final String LINE_COLOR_BLUE = "#3f51b5";
 
     // GREEN LINE
-    public static final String LINE_NUMBER_GREEN = "2";
-    public static final String LINE_NAME_GREEN = "Linha 2 - Verde";
-    public static final String LINE_COLOR_GREEN = "#009688";
+    private static final String LINE_NUMBER_GREEN = "2";
+    private static final String LINE_NAME_GREEN = "Linha 2 - Verde";
+    private static final String LINE_COLOR_GREEN = "#009688";
 
     // RED LINE
-    public static final String LINE_NUMBER_RED = "3";
-    public static final String LINE_NAME_RED = "Linha 3 - Vermelha";
-    public static final String LINE_COLOR_RED = "#f44336";
+    private static final String LINE_NUMBER_RED = "3";
+    private static final String LINE_NAME_RED = "Linha 3 - Vermelha";
+    private static final String LINE_COLOR_RED = "#f44336";
 
     // YELLOW LINE
-    public static final String LINE_NUMBER_YELLOW = "4";
-    public static final String LINE_NAME_YELLOW = "Linha 4 - Amarela";
-    public static final String LINE_COLOR_YELLOW = "#ffeb3b";
+    private static final String LINE_NUMBER_YELLOW = "4";
+    private static final String LINE_NAME_YELLOW = "Linha 4 - Amarela";
+    private static final String LINE_COLOR_YELLOW = "#ffeb3b";
 
     // SILVER LINE
-    public static final String LINE_NUMBER_SILVER = "15";
-    public static final String LINE_NAME_SILVER = "Linha 15 - Prata";
-    public static final String LINE_COLOR_SILVER = "#717A7D";
+    private static final String LINE_NUMBER_SILVER = "15";
+    private static final String LINE_NAME_SILVER = "Linha 15 - Prata";
+    private static final String LINE_COLOR_SILVER = "#717A7D";
 
     // LILAC LINE
-    public static final String LINE_NUMBER_LILAC = "5";
-    public static final String LINE_NAME_LILAC = "Linha 5 - Lilás";
-    public static final String LINE_COLOR_LILAC = "#ab47bc";
+    private static final String LINE_NUMBER_LILAC = "5";
+    private static final String LINE_NAME_LILAC = "Linha 5 - Lilás";
+    private static final String LINE_COLOR_LILAC = "#ab47bc";
 
 
     // RUBI LINE
-    public static final String LINE_NUMBER_RUBI = "7";
-    public static final String LINE_NAME_RUBI = "Linha 7 - Rubi";
-    public static final String LINE_COLOR_RUBI = "#A01239";
+    private static final String LINE_NUMBER_RUBI = "7";
+    private static final String LINE_NAME_RUBI = "Linha 7 - Rubi";
+    private static final String LINE_COLOR_RUBI = "#A01239";
 
     // DIAMANTE LINE
-    public static final String LINE_NUMBER_DIAMANTE = "8";
-    public static final String LINE_NAME_DIAMANTE = "Linha 8 - Diamante";
-    public static final String LINE_COLOR_DIAMANTE = "#A0957D";
+    private static final String LINE_NUMBER_DIAMANTE = "8";
+    private static final String LINE_NAME_DIAMANTE = "Linha 8 - Diamante";
+    private static final String LINE_COLOR_DIAMANTE = "#A0957D";
 
     // ESMERALDA LINE
-    public static final String LINE_NUMBER_ESMERALDA = "9";
-    public static final String LINE_NAME_ESMERALDA = "Linha 9 - ESMERALDA";
-    public static final String LINE_COLOR_ESMERALDA = "#1A9E93";
+    private static final String LINE_NUMBER_ESMERALDA = "9";
+    private static final String LINE_NAME_ESMERALDA = "Linha 9 - ESMERALDA";
+    private static final String LINE_COLOR_ESMERALDA = "#1A9E93";
 
     // TURQUESA LINE
-    public static final String LINE_NUMBER_TURQUESA = "10";
-    public static final String LINE_NAME_TURQUESA = "Linha 10 - TURQUESA";
-    public static final String LINE_COLOR_TURQUESA = "#00708B";
+    private static final String LINE_NUMBER_TURQUESA = "10";
+    private static final String LINE_NAME_TURQUESA = "Linha 10 - TURQUESA";
+    private static final String LINE_COLOR_TURQUESA = "#00708B";
 
     // CORAL LINE
-    public static final String LINE_NUMBER_CORAL = "11";
-    public static final String LINE_NAME_CORAL = "Linha 11 - CORAL";
-    public static final String LINE_COLOR_CORAL = "#EC4D13";
+    private static final String LINE_NUMBER_CORAL = "11";
+    private static final String LINE_NAME_CORAL = "Linha 11 - CORAL";
+    private static final String LINE_COLOR_CORAL = "#EC4D13";
 
     // SAFIRA LINE
-    public static final String LINE_NUMBER_SAFIRA = "12";
-    public static final String LINE_NAME_SAFIRA = "Linha 12 - SAFIRA";
-    public static final String LINE_COLOR_SAFIRA = "#0B486E";
+    private static final String LINE_NUMBER_SAFIRA = "12";
+    private static final String LINE_NAME_SAFIRA = "Linha 12 - SAFIRA";
+    private static final String LINE_COLOR_SAFIRA = "#0B486E";
 
 
     public static JSONObject parseJSONFromMetroResponse(String response) {
@@ -172,8 +168,6 @@ public class JSONParser {
 
         response = response.replace("</span></div>", "\" },");
 
-
-
         // RUBI
         // Case normal speed
         response = response.replace("<div class='col-xs-4 col-sm-4 col-md-2 rubi'><span class='nome_linha'>RUBI</span><span data-placement='bottom' title=''   class='status_normal'>Operação Normal",
@@ -253,9 +247,7 @@ public class JSONParser {
 
 
         try {
-            JSONObject result = new JSONObject(response);
-
-            return result;
+            return new JSONObject(response);
         } catch (JSONException e) {
             e.printStackTrace();
 

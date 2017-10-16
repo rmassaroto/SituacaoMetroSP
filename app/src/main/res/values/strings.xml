@@ -4,6 +4,7 @@
 
     <!-- Main Activity -->
     <string name="still_not_updated">No yet updated</string>
+    <string name="updated_at">Updated at %1$s</string>
 
     <!-- Errors -->
     <string name="could_not_get_data_error">Could not get data, please try again later!</string>

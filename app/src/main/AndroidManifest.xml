@@ -1,35 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.renanmassaroto.situacaometrosp"
-    android:versionCode="2"
-    android:versionName="1.0.1">
+    package="com.renanmassaroto.situacaometrosp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-
-        <!--<receiver android:name=".LinesListWidgetProvider" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
-            <!--</intent-filter>-->
-            <!--<meta-data android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/lines_list_widget_info" />-->
-        <!--</receiver>-->
-
-        <!--<activity android:name=".ExampleAppWidgetConfigure">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-        <!--<service android:name=".WidgetService"-->
-            <!--android:permission="android.permission.BIND_REMOTEVIEWS" />-->
+        android:theme="@style/AppTheme"
+        android:supportsRtl="true">
 
         <activity
             android:name=".MainActivity"
@@ -41,13 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".widgets.WidgetUpdater"-->
-            <!--android:label="@string/app_name">-->
-        <!--</activity>-->
 
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="e014e556598285f7063d456687b852f27250c177" />
